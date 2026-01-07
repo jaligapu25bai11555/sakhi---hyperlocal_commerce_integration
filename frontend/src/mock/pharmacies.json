@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "Apollo Pharmacy",
+    "delivery_time": "15 mins",
+    "categories": ["Menstrual Care", "Pain Relief"]
+  },
+  {
+    "id": 2,
+    "name": "MedPlus",
+    "delivery_time": "20 mins",
+    "categories": ["Pregnancy", "Baby Care"]
+  },
+  {
+    "id": 3,
+    "name": "Local Medical Store",
+    "delivery_time": "10 mins",
+    "categories": ["Emergency", "Pain Relief"]
+  }
+]
