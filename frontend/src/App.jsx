@@ -61,13 +61,49 @@ function PharmacyLanding() {
 
 
 function WomensEssentials() {
+  const products = [
+    { id: 1, name: "Sanitary Pads", price: "₹120", category: "Menstrual Care" },
+    { id: 2, name: "Menstrual Cup", price: "₹399", category: "Menstrual Care" },
+    { id: 3, name: "Panty Liners", price: "₹99", category: "Hygiene" },
+    { id: 4, name: "Pain Relief Spray", price: "₹180", category: "Pain Relief" },
+    { id: 5, name: "Hot Water Bag", price: "₹249", category: "Comfort" },
+    { id: 6, name: "Iron Supplements", price: "₹199", category: "Wellness" },
+    { id: 7, name: "Pregnancy Test Kit", price: "₹60", category: "Pregnancy" },
+    { id: 8, name: "Intimate Wash", price: "₹220", category: "Hygiene" },
+    { id: 9, name: "Multivitamins", price: "₹299", category: "Wellness" },
+    { id: 10, name: "Heating Patch", price: "₹150", category: "Pain Relief" },
+    { id: 11, name: "Maternity Pads", price: "₹180", category: "Postpartum" },
+    { id: 12, name: "Herbal Tea", price: "₹140", category: "Relaxation" },
+    { id: 13, name: "Sleep Aid Roll-on", price: "₹199", category: "Wellness" },
+    { id: 14, name: "Body Heat Balm", price: "₹130", category: "Pain Relief" },
+    { id: 15, name: "Folic Acid Tablets", price: "₹160", category: "Pregnancy" },
+    { id: 16, name: "Organic Cotton Tampons", price: "₹280", category: "Menstrual Care" },
+  ];
+
   return (
-    <div style={{ padding: "32px" }}>
-      <h1>Women’s Essentials</h1>
-      <p>Products curated for women’s health and wellness.</p>
+    <div className="products-page">
+      <h1 className="page-title">Women’s Essentials</h1>
+
+      <div className="product-grid">
+        {products.map((product) => (
+          <div key={product.id} className="product-card">
+            <div className="product-info">
+              <h3>{product.name}</h3>
+              <p className="category">{product.category}</p>
+              <p className="price">{product.price}</p>
+            </div>
+
+            <div className="product-actions">
+              <button className="add-btn">Add to Cart</button>
+              <button className="order-btn">Order Now</button>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
+
 
 function EmergencySupport() {
   return (

@@ -171,3 +171,74 @@ body {
 .contact-btn:hover {
   opacity: 0.9;
 }
+/* Women's essentials page */
+.products-page {
+  padding: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.product-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product-info h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.product-info .category {
+  font-size: 13px;
+  color: #777;
+  margin: 6px 0;
+}
+
+.product-info .price {
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+.product-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.add-btn {
+  flex: 1;
+  padding: 8px;
+  border-radius: 10px;
+  border: 1px solid #0c831f;
+  background: transparent;
+  color: #0c831f;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.order-btn {
+  flex: 1;
+  padding: 8px;
+  border-radius: 10px;
+  border: none;
+  background: #0c831f;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.add-btn:hover,
+.order-btn:hover {
+  opacity: 0.9;
+}
