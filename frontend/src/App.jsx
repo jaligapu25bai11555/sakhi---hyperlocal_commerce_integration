@@ -354,13 +354,83 @@ function Pharmacies() {
 function Cart() {
   const navigate = useNavigate();
 
+  const cartItems = [
+    {
+      id: 1,
+      name: "Sanitary Pads",
+      quantity: 2,
+      price: 120,
+    },
+    {
+      id: 2,
+      name: "Pain Relief Spray",
+      quantity: 1,
+      price: 180,
+    },
+    {
+      id: 3,
+      name: "Iron Supplements",
+      quantity: 1,
+      price: 199,
+    },
+  ];
+
+  const subtotal = cartItems.reduce(
+    (sum, item) => sum + item.price * item.quantity,
+    0
+  );
+
+  const deliveryFee = 30;
+  const total = subtotal + deliveryFee;
+
   return (
-    <div style={{ padding: "32px" }}>
-      <h1>Your Cart</h1>
-      <p>No items added yet.</p>
-      <button onClick={() => navigate("/")}>← Continue shopping</button>
+    <div className="cart-page">
+      <h1 className="page-title">My Cart</h1>
+
+      <div className="cart-list">
+        {cartItems.map((item) => (
+          <div key={item.id} className="cart-item">
+            <div className="cart-item-info">
+              <h3>{item.name}</h3>
+              <p>Quantity: {item.quantity}</p>
+            </div>
+
+            <div className="cart-item-price">
+              ₹{item.price * item.quantity}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="cart-summary">
+        <div className="summary-row">
+          <span>Subtotal</span>
+          <span>₹{subtotal}</span>
+        </div>
+
+        <div className="summary-row">
+          <span>Delivery Fee</span>
+          <span>₹{deliveryFee}</span>
+        </div>
+
+        <div className="summary-row total">
+          <strong>Total</strong>
+          <strong>₹{total}</strong>
+        </div>
+      </div>
+
+      <div className="cart-actions">
+        <button className="secondary-btn" onClick={() => navigate("/")}>
+          Home
+        </button>
+
+        <button className="primary-btn">
+          Order Now
+        </button>
+      </div>
     </div>
   );
 }
+
 
 export default App;
