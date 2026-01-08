@@ -7,9 +7,84 @@ import "./App.css";
 /* =========================
    APP (ROUTER ONLY)
 ========================= */
+function PharmacyLanding() {
+  const pharmacies = [
+    {
+      id: 1,
+      name: "Apollo Pharmacy",
+      distance: "0.6 km",
+      eta: "10 mins",
+    },
+    {
+      id: 2,
+      name: "MedPlus",
+      distance: "1.2 km",
+      eta: "15 mins",
+    },
+    {
+      id: 3,
+      name: "Sakhi Partner Pharmacy",
+      distance: "0.9 km",
+      eta: "12 mins",
+    },
+    {
+      id: 4,
+      name: "Local Medical Store",
+      distance: "0.4 km",
+      eta: "8 mins",
+    },
+  ];
+
+  return (
+    <div className="pharmacy-page">
+      <h1 className="page-title">Nearby Pharmacies</h1>
+
+      <div className="pharmacy-list">
+        {pharmacies.map((pharmacy) => (
+          <div key={pharmacy.id} className="pharmacy-card">
+            <div className="pharmacy-info">
+              <h3>{pharmacy.name}</h3>
+              <p>
+                {pharmacy.distance} • Delivery in {pharmacy.eta}
+              </p>
+            </div>
+
+            <button className="contact-btn">
+              Contact Pharmacy
+            </button>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+
+function WomensEssentials() {
+  return (
+    <div style={{ padding: "32px" }}>
+      <h1>Women’s Essentials</h1>
+      <p>Products curated for women’s health and wellness.</p>
+    </div>
+  );
+}
+
+function EmergencySupport() {
+  return (
+    <div style={{ padding: "32px" }}>
+      <h1>Emergency Support</h1>
+      <p>Quick access to emergency services and help.</p>
+    </div>
+  );
+}
+
 function App() {
   return (
     <Routes>
+      <Route path="/pharmacy" element={<PharmacyLanding />} />
+      <Route path="/womens-essentials" element={<WomensEssentials />} />
+      <Route path="/emergency-support" element={<EmergencySupport />} />
+
       <Route path="/" element={<Home />} />
       <Route path="/pharmacies" element={<Pharmacies />} />
       <Route path="/cart" element={<Cart />} />
@@ -140,22 +215,32 @@ pharmacies.forEach((pharmacy) => {
       </header>
 
       {/* PROMOS */}
-      <section className="promos">
-        <div className="promo-card purple">
-          <h3>Pharmacy at your doorstep</h3>
-          <p>Pads, pain relief & more</p>
-        </div>
+<section className="promos">
+  <div
+    className="promo-card purple"
+    onClick={() => navigate("/pharmacy")}
+  >
+    <h3>Pharmacy at your doorstep</h3>
+    <p>Pads, pain relief & more</p>
+  </div>
 
-        <div className="promo-card pink">
-          <h3>Women’s essentials</h3>
-          <p>Delivered discreetly</p>
-        </div>
+  <div
+    className="promo-card pink"
+    onClick={() => navigate("/womens-essentials")}
+  >
+    <h3>Women’s essentials</h3>
+    <p>Delivered discreetly</p>
+  </div>
 
-        <div className="promo-card soft">
-          <h3>Emergency support</h3>
-          <p>Help when you need it</p>
-        </div>
-      </section>
+  <div
+    className="promo-card soft"
+    onClick={() => navigate("/emergency-support")}
+  >
+    <h3>Emergency support</h3>
+    <p>Help when you need it</p>
+  </div>
+</section>
+
 
       
       {/* MAP */}

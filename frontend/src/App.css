@@ -121,3 +121,53 @@ body {
   border-radius: 20px;
   box-shadow: 0 6px 16px rgba(0,0,0,0.08);
 }
+/* Pharmacy page */
+.pharmacy-page {
+  padding: 32px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.page-title {
+  margin-bottom: 20px;
+}
+
+.pharmacy-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.pharmacy-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+}
+
+.pharmacy-info h3 {
+  margin: 0;
+}
+
+.pharmacy-info p {
+  margin: 6px 0 0;
+  color: #666;
+  font-size: 14px;
+}
+
+.contact-btn {
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: none;
+  background: #0c831f;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.contact-btn:hover {
+  opacity: 0.9;
+}
