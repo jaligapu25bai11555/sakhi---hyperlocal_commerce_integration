@@ -107,12 +107,58 @@ function WomensEssentials() {
 
 function EmergencySupport() {
   return (
-    <div style={{ padding: "32px" }}>
-      <h1>Emergency Support</h1>
-      <p>Quick access to emergency services and help.</p>
+    <div className="emergency-page">
+      <h1 className="page-title">Emergency Support</h1>
+      <p className="page-subtitle">
+        Immediate help and support resources for women.
+      </p>
+
+      {/* PRIMARY ACTIONS */}
+      <div className="emergency-actions">
+        <button className="emergency-btn danger">
+          Call Emergency Services
+        </button>
+
+        <button className="emergency-btn warning">
+          Contact Women’s Helpline
+        </button>
+
+        <button className="emergency-btn safe">
+          Share My Location
+        </button>
+      </div>
+
+      {/* HELPLINES */}
+      <div className="helpline-section">
+        <h2>Important Helplines</h2>
+
+        <div className="helpline-card">
+          <strong>Women Helpline (India)</strong>
+          <span>1091</span>
+        </div>
+
+        <div className="helpline-card">
+          <strong>Police Emergency</strong>
+          <span>112</span>
+        </div>
+
+        <div className="helpline-card">
+          <strong>Domestic Violence Support</strong>
+          <span>181</span>
+        </div>
+      </div>
+
+      {/* SUPPORT RESOURCES */}
+      <div className="support-section">
+        <h2>Support Resources</h2>
+        <p>
+          Access nearby shelters, counseling services, and support groups.
+        </p>
+      </div>
     </div>
   );
 }
+
 
 function App() {
   return (

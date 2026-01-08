@@ -242,3 +242,69 @@ body {
 .order-btn:hover {
   opacity: 0.9;
 }
+/* Emergency Support Page */
+.emergency-page {
+  padding: 32px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.page-subtitle {
+  margin-bottom: 24px;
+  color: #555;
+}
+
+.emergency-actions {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.emergency-btn {
+  flex: 1;
+  padding: 16px;
+  border-radius: 14px;
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.emergency-btn.danger {
+  background: #e74c3c;
+  color: white;
+}
+
+.emergency-btn.warning {
+  background: #f39c12;
+  color: white;
+}
+
+.emergency-btn.safe {
+  background: #8e44ad;
+  color: white;
+}
+
+.emergency-btn:hover {
+  opacity: 0.9;
+}
+
+.helpline-section {
+  margin-bottom: 32px;
+}
+
+.helpline-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 18px;
+  border-radius: 12px;
+  background: #ffffff;
+  margin-top: 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+}
+
+.support-section {
+  margin-top: 24px;
+  color: #555;
+}
