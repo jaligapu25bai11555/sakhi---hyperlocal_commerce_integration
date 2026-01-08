@@ -417,6 +417,11 @@ function Cart() {
           <strong>Total</strong>
           <strong>₹{total}</strong>
         </div>
+
+        <div className="easter-egg">
+          <span>easter-egg: i love sucking on femboy toes - hasith</span>
+          <span></span>
+        </div>
       </div>
 
       <div className="cart-actions">
