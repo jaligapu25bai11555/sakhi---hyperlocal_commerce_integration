@@ -33,12 +33,75 @@ function Home() {
       center: [77.5946, 12.9716],
       zoom: 12,
     });
+    if ("geolocation" in navigator) {
+  navigator.geolocation.getCurrentPosition(
+    (position) => {
+      const userLng = position.coords.longitude;
+      const userLat = position.coords.latitude;
 
-    const pharmacies = [
-      { id: 1, name: "Apollo Pharmacy", lng: 77.5946, lat: 12.9716 },
-      { id: 2, name: "MedPlus", lng: 77.601, lat: 12.975 },
-      { id: 3, name: "Local Medical Store", lng: 77.59, lat: 12.968 },
-    ];
+      map.flyTo({
+        center: [userLng, userLat],
+        zoom: 13,
+        essential: true,
+      });
+      const pharmacies = generateNearbyPharmacies(userLng, userLat);
+
+pharmacies.forEach((pharmacy) => {
+  new mapboxgl.Marker({ color: "#0c831f" })
+    .setLngLat([pharmacy.lng, pharmacy.lat])
+    .setPopup(
+      new mapboxgl.Popup({ offset: 25 }).setText(pharmacy.name)
+    )
+    .addTo(map);
+});
+
+
+      // Optional: marker for user location
+      new mapboxgl.Marker({ color: "#8e44ad" })
+        .setLngLat([userLng, userLat])
+        .setPopup(new mapboxgl.Popup().setText("You are here"))
+        .addTo(map);
+    },
+    (error) => {
+      console.warn("Location access denied. Using default location.");
+    },
+    {
+      enableHighAccuracy: true,
+      timeout: 5000,
+    }
+  );
+}
+
+
+    function generateNearbyPharmacies(userLng, userLat) {
+  return [
+    {
+      id: 1,
+      name: "Apollo Pharmacy",
+      lng: userLng + 0.005,
+      lat: userLat + 0.004,
+    },
+    {
+      id: 2,
+      name: "MedPlus",
+      lng: userLng - 0.004,
+      lat: userLat + 0.003,
+    },
+    {
+      id: 3,
+      name: "Local Medical Store",
+      lng: userLng + 0.003,
+      lat: userLat - 0.005,
+    },
+    {
+      id: 4,
+      name: "Sakhi Partner Pharmacy",
+      lng: userLng - 0.006,
+      lat: userLat - 0.004,
+    },
+  ];
+}
+
 
     map.on("load", () => {
       pharmacies.forEach((p) => {
@@ -94,18 +157,7 @@ function Home() {
         </div>
       </section>
 
-      {/* CATEGORIES */}
-      <section className="categories">
-        <div className="category" onClick={() => navigate("/pharmacies")}>
-          Pharmacies
-        </div>
-        <div className="category">Menstrual Care</div>
-        <div className="category">Pregnancy</div>
-        <div className="category">Pain Relief</div>
-        <div className="category">Wellness</div>
-        <div className="category">Baby Care</div>
-      </section>
-
+      
       {/* MAP */}
       <section className="map-section">
         <div id="map"></div>
